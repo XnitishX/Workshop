@@ -31,10 +31,10 @@ namespace DemoConsole
             }
 
             dynamic s = "str";
-            if(s==1)
-            {
+            //if(s==1)
+            //{
 
-            }
+            //}
 
             const int c = 2;// _getVal();
 
@@ -44,6 +44,9 @@ namespace DemoConsole
             p.Swap(ref v1,ref v2);
             int z1=9, z2;
             p.GetVal(out z1,out z2);
+            int[] arr = { 1, 2, 3, 4, 5 };
+            p.ParamsAdd(arr);
+            int[,] mdArr=new int
             Console.WriteLine();
             Console.ReadKey();
         }
@@ -58,6 +61,14 @@ namespace DemoConsole
         {
             a = 1;
             b = 2;
+        }
+
+        public void ParamsAdd(params int[] arr)
+        {
+            int sum = 0;
+            foreach (var i in arr)
+                sum += i;
+            Console.WriteLine(sum);
         }
     }
 }
