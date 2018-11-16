@@ -46,7 +46,13 @@ namespace DemoConsole
             p.GetVal(out z1,out z2);
             int[] arr = { 1, 2, 3, 4, 5 };
             p.ParamsAdd(arr);
-            int[,] mdArr=new int
+            ////int[,] mdArr=new int
+            ///
+            Ex st = new Ex(1);
+            st.print();
+            //int val = vals.one;
+            Console.WriteLine(st.id+st.name);
+            Console.WriteLine((int)vals.three);
             Console.WriteLine();
             Console.ReadKey();
         }
@@ -70,5 +76,32 @@ namespace DemoConsole
                 sum += i;
             Console.WriteLine(sum);
         }
+    }
+
+    enum vals {
+        one=1,
+        two=2,
+        three='s'
+    }
+
+    struct Ex:IContract
+    {
+        public Ex(int i)
+        {
+            this.id = 2;
+            this.name = "sd";
+        }
+        public int id;
+        public string name;
+
+        public void print()
+        {
+            Console.WriteLine("inside struct");
+        }
+    }
+
+    interface IContract
+    {
+        void print();
     }
 }
